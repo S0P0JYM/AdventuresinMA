@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #e6f2f2, #f9f7f7);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+}
+
+.banner {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #88c9bf;
+}
+
+nav {
+  background: #4a8d85;
+  padding: 12px;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f7e98e;
+}
+
+main {
+  padding: 25px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+h2 {
+  color: #4a8d85;
+  border-bottom: 2px solid #88c9bf;
+  padding-bottom: 5px;
+}
+
+img {
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+form {
+  background: #f0fdfc;
+  padding: 20px;
+  border: 1px solid #cdeae6;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+input[type="submit"] {
+  background: #4a8d85;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+  background: #35736c;
+}
+
+footer {
+  text-align: center;
+  background: #88c9bf;
+  padding: 15px;
+  margin-top: 30px;
+  color: white;
+}
