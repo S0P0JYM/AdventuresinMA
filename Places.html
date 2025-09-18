@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haunted Places in & Near Massachusetts</title>
+  <style>
+    :root { --bg:#0b0f14; --card:#121821; --ink:#e7ecf3; --muted:#93a0b5; --accent:#c08bff; }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#0b0f14,#0a0d12 40%,#0a0a0a);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    header{position:sticky;top:0;z-index:10;background:#0b0f14cc;backdrop-filter:blur(6px);border-bottom:1px solid #1e2632}
+    .wrap{max-width:1100px;margin:auto;padding:18px}
+    h1{margin:0 0 6px;font-size:clamp(22px,3vw,34px);letter-spacing:.3px}
+    p.sub{margin:.25rem 0 0;color:var(--muted)}
+    .tools{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+    .search{flex:1;min-width:240px;display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid #222a36;border-radius:14px;padding:10px 14px}
+    .search input{all:unset;flex:1}
+    .tag{padding:6px 10px;border:1px solid #242c3a;border-radius:999px;color:var(--muted);cursor:pointer;user-select:none}
+    .tag.active{border-color:var(--accent);color:#fff}
+    main{padding:22px 18px}
+    .grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid #1c2430;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px;transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #0007;border-color:#2c3647}
+    .title{font-weight:700;font-size:18px;line-height:1.3}
+    .addr{color:#dfe7f6}
+    .city{color:var(--muted);font-size:14px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+    .chip{font-size:12px;color:#cdd6e6;border:1px dashed #2c3647;border-radius:999px;padding:4px 8px}
+    .cta{margin-top:auto;display:flex;gap:8px}
+    .btn{flex:1;text-align:center;text-decoration:none;color:#fff;background:#1d2330;border:1px solid #2a3243;border-radius:10px;padding:8px 10px}
+    .btn.map{background:linear-gradient(90deg,#6e47ff,#a065ff);border:none}
+    footer{max-width:1100px;margin:24px auto;padding:0 18px;color:var(--muted);font-size:14px}
+    mark{background:#2a1f3d;color:#e9dcff;padding:0 .25em;border-radius:4px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Haunted Places in & Near Massachusetts</h1>
+      <p class="sub">Click “Open in Maps” for directions. <em>Please respect hours, rules, and private property.</em></p>
+      <div class="tools">
+        <label class="search" title="Filter by name or city">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#93a0b5" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5 1.49-1.49-5-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input id="q" placeholder="Search by place or city…" autofocus />
+        </label>
+        <div class="tag" data-tag="Massachusetts">Massachusetts</div>
+        <div class="tag" data-tag="Nearby">Nearby</div>
+        <div class="tag" data-tag="Hotel">Hotel</div>
+        <div class="tag" data-tag="Museum">Museum</div>
+        <div class="tag" data-tag="Cemetery">Cemetery</div>
+        <div class="tag" data-tag="Forest">Forest</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid" id="list">
+      <!-- Massachusetts -->
+      <article class="card" data-tags="Massachusetts Museum House">
+        <div class="title">Lizzie Borden House</div>
+        <div class="city">Fall River, MA</div>
+        <div class="addr">230 2nd St, Fall River, MA 02721</div>
+        <div class="chips">
+          <span class="chip">House Museum</span><span class="chip">Tours / Stays</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=230%202nd%20St,%20Fall%20River,%20MA%2002721" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://lizzie-borden.com/" target="_blank" rel="noopener">Official Site</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts Hotel Boston">
+        <div class="title">Omni Parker House</div>
+        <div class="city">Boston, MA</div>
+        <div class="addr">60 School St, Boston, MA 02108</div>
+        <div class="chips">
+          <span class="chip">Historic Hotel</span><span class="chip">Ghost Lore</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=60%20School%20St,%20Boston,%20MA%2002108" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://www.omnihotels.com/hotels/boston-parker-house" target="_blank" rel="noopener">Hotel Page</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts Hotel">
+        <div class="title">Concord’s Colonial Inn</div>
+        <div class="city">Concord, MA</div>
+        <div class="addr">48 Monument Sq, Concord, MA 01742</div>
+        <div class="chips">
+          <span class="chip">Historic Inn</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=48%20Monument%20Square,%20Concord,%20MA%2001742" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://www.concordscolonialinn.com/haunted-hotel/" target="_blank" rel="noopener">Inn Page</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts Museum Salem">
+        <div class="title">The Witch House (Jonathan Corwin House)</div>
+        <div class="city">Salem, MA</div>
+        <div class="addr">310 Essex St, Salem, MA 01970</div>
+        <div class="chips">
+          <span class="chip">Museum</span><span class="chip">Witch Trials</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=310%20Essex%20St,%20Salem,%20MA%2001970" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://www.thewitchhouse.org/" target="_blank" rel="noopener">Official Site</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts Salem House">
+        <div class="title">Joshua Ward House (The Merchant)</div>
+        <div class="city">Salem, MA</div>
+        <div class="addr">148 Washington St, Salem, MA 01970</div>
+        <div class="chips">
+          <span class="chip">Historic House</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=148%20Washington%20St,%20Salem,%20MA%2001970" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://salemwitchmuseum.com/locations/site-of-george-corwin-house-joshua-ward-house/" target="_blank" rel="noopener">More Info</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts Hotel Salem">
+        <div class="title">Hawthorne Hotel</div>
+        <div class="city">Salem, MA</div>
+        <div class="addr">18 Washington Sq W, Salem, MA 01970</div>
+        <div class="chips">
+          <span class="chip">Historic Hotel</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=18%20Washington%20Square%20W,%20Salem,%20MA%2001970" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://www.hawthornehotel.com/" target="_blank" rel="noopener">Hotel Page</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts Museum Salem">
+        <div class="title">The House of the Seven Gables</div>
+        <div class="city">Salem, MA</div>
+        <div class="addr">115 Derby St, Salem, MA 01970</div>
+        <div class="chips">
+          <span class="chip">Museum</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=115%20Derby%20St,%20Salem,%20MA%2001970" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://7gables.org/" target="_blank" rel="noopener">Official Site</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts Museum Ship">
+        <div class="title">USS Salem (United States Naval Shipbuilding Museum)</div>
+        <div class="city">Quincy, MA</div>
+        <div class="addr">549 South St, Pier 3, Quincy, MA 02169</div>
+        <div class="chips">
+          <span class="chip">Museum Ship</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=549%20South%20St,%20Quincy,%20MA%2002169" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://www.uss-salem.org/visit/" target="_blank" rel="noopener">Visit Page</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts Forest">
+        <div class="title">Freetown–Fall River State Forest (Bridgewater Triangle)</div>
+        <div class="city">Assonet, MA</div>
+        <div class="addr">110 Slab Bridge Rd, Assonet, MA 02702</div>
+        <div class="chips">
+          <span class="chip">Forest</span><span class="chip">Folklore</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=110%20Slab%20Bridge%20Rd,%20Assonet,%20MA%2002702" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://www.mass.gov/locations/freetown-fall-river-state-forest" target="_blank" rel="noopener">State Page</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts Cemetery">
+        <div class="title">Spider Gates Cemetery (Quaker Cemetery)</div>
+        <div class="city">Leicester, MA</div>
+        <div class="addr">235 Manville St, Leicester, MA 01524</div>
+        <div class="chips">
+          <span class="chip">Cemetery</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=235%20Manville%20St,%20Leicester,%20MA%2001524" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://www.atlasobscura.com/places/spider-gates-cemetery" target="_blank" rel="noopener">More Info</a>
+        </div>
+      </article>
+
+      <article class="card" data-tags="Massachusetts House Museum">
+        <div class="title">S.K. Pierce Haunted Victorian Mansion</div>
+        <div class="city">Gardner, MA</div>
+        <div class="addr">4 W Broadway, Gardner, MA 01440</div>
+        <div class="chips">
+          <span class="chip">Tours</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=4%20W%20Broadway,%20Gardner,%20MA%2001440" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://skhauntedvictorianmansion.com/location.html" target="_blank" rel="noopener">Location</a>
+        </div>
+      </article>
+
+      <!-- Nearby (Rhode Island, just over the border) -->
+      <article class="card" data-tags="Nearby House Rhode Island">
+        <div class="title">The Conjuring House (near MA)</div>
+        <div class="city">Harrisville / Burrillville, RI</div>
+        <div class="addr">1677 Round Top Rd, Burrillville, RI 02830</div>
+        <div class="chips">
+          <span class="chip">Day Tours / Investigations (seasonal)</span>
+        </div>
+        <div class="cta">
+          <a class="btn map" href="https://maps.apple.com/?address=1677%20Round%20Top%20Rd,%20Burrillville,%20RI%2002830" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="btn" href="https://www.theconjuringhouse.com" target="_blank" rel="noopener">Official Site</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tip: Use the search box to filter by name or city. Click a <mark>tag</mark> to filter by type (e.g., <mark>Hotel</mark> or <mark>Cemetery</mark>).</p>
+    <p>Always check current hours/tour availability before visiting.</p>
+  </footer>
+
+  <script>
+    const q = document.querySelector('#q');
+    const cards = [...document.querySelectorAll('.card')];
+    const tagButtons = [...document.querySelectorAll('.tag')];
+    let activeTags = new Set();
+
+    function render() {
+      const term = (q.value || '').toLowerCase().trim();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const tags = (card.dataset.tags || '').toLowerCase().split(/\s+/);
+        const matchesText = !term || text.includes(term);
+        const matchesTags = activeTags.size === 0 || [...activeTags].every(t => tags.includes(t.toLowerCase()));
+        card.style.display = (matchesText && matchesTags) ? '' : 'none';
+      });
+    }
+    q.addEventListener('input', render);
+    tagButtons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const t = btn.dataset.tag;
+        if(btn.classList.toggle('active')){
+          activeTags.add(t);
+        } else {
+          activeTags.delete(t);
+        }
+        render();
+      });
+    });
+    render();
+  </script>
+</body>
+</html>
