@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <nav>
+  <a href="index.html">Home</a>
+  <a href="teachings.html">Teachings</a>
+  <a href="meditation.html">Adventures</a>
+  <a href="gallery.html">Gallery</a>
+   <a href="photos.html">Photos</a>
+  <a href="contact.html">Contact</a>
+  <a href="Reservation.html">Lizzie Borden House Reservation</a>
+</nav>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photo Gallery & Description</title>
+  <style>
+    :root{
+      --bg:#0f1115; --card:#151822; --text:#e8ecf1; --muted:#a7b0c0; --accent:#8ab4ff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg, #0b0d12 0%, #10131a 100%);
+      color:var(--text);
+    }
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+
+    header{
+      display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between;margin-bottom:20px
+    }
+    nav {
+  background: #0D0302;
+  padding: 12px;
+  text-align: center;
+  color:#e6e6e6
+}
+nav a {
+  color: #ED1105;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #0D0302;
+}
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(20, 20, 20, 0.9);
+      border: 2px solid #444;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    }
+    .title{
+      font-size:clamp(1.4rem,2.2vw,2.2rem);font-weight:700;letter-spacing:.3px
+    }
+    .subtitle{color:var(--muted);font-size:.95rem}
+
+    .card{
+      background:linear-gradient(180deg, #151a24 0%, #131722 100%);
+      border:1px solid rgba(255,255,255,.06); border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,.35);
+      overflow:hidden
+    }
+
+    /* Description block */
+    .desc{
+      display:grid; grid-template-columns: 1.1fr .9fr; gap:24px; padding:22px;
+    }
+    .desc-text{line-height:1.6}
+    .desc-text h2{margin:.2rem 0 0.6rem}
+    .desc-text p{margin:.4rem 0;color:var(--muted)}
+    .desc-meta{display:flex; flex-direction:column; gap:10px; background:rgba(255,255,255,.03); padding:16px; border-radius:14px}
+    .pill{display:inline-flex; align-items:center; gap:8px; font-size:.85rem; color:var(--muted)}
+    .pill svg{opacity:.8}
+
+    /* Gallery */
+    .gallery{padding:22px; padding-top:10px}
+    .grid{
+      display:grid; gap:12px;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    .item{position:relative; border-radius:16px; overflow:hidden; background:#0c0f16; border:1px solid rgba(255,255,255,.06)}
+    .item img{width:100%; height:200px; object-fit:cover; display:block; transition:transform .35s ease}
+    .item:hover img{transform:scale(1.04)}
+    .item .caption{position:absolute; left:8px; bottom:8px; right:8px; font-size:.8rem; color:#dfe7ff; text-shadow:0 1px 10px rgba(0,0,0,.6); opacity:.95}
+    .item button{
+      all:unset; cursor:pointer; position:absolute; inset:0;
+    }
+
+    /* Lightbox using <dialog> */
+    dialog{ border:none; padding:0; background:transparent; width:min(96vw,1100px)}
+    dialog::backdrop{ background:rgba(0,0,0,.73)}
+    .lightbox{ position:relative; }
+    .lightbox img{ width:100%; height:auto; display:block; max-height:86vh; object-fit:contain; background:#000 }
+    .close{ position:absolute; top:10px; right:10px; background:rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.2); color:#fff; padding:8px 10px; border-radius:10px; cursor:pointer; font-size:.9rem }
+    .lightcap{ position:absolute; left:0; right:0; bottom:0; background:linear-gradient(180deg, transparent, rgba(0,0,0,.85)); color:#e9eefc; padding:16px 14px; font-size:.95rem }
+
+    footer{color:var(--muted); text-align:center; padding:18px 6px; font-size:.9rem}
+
+    @media (max-width: 800px){
+      .desc{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="title">Your Gallery Title</div>
+        <div class="subtitle">A short line about the photos below.</div>
+      </div>
+    </header>
+
+    <!-- Description block -->
+    <section class="card desc">
+      <div class="desc-text">
+        <h2>Haunted Places in or near Massachusetts</h2>
+        <p>
+          Pictures of scary places to serve as chilling memories of your adventures. They capture the eerie atmosphere of dark corners, abandoned sites, and unsettling environments you explored. 
+        </p>
+        <p>
+          Each photo reflects not only the haunting details of the place—like shadows, decay, or silence—but also your personal experience of stepping into those mysterious spaces, making the images both haunting and meaningful.
+        </p>
+      </div>
+      <aside class="desc-meta">
+        <div class="pill" title="Location">
+          <!-- map pin icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z"/></svg>
+          FallRiver, MA USA
+        </div>
+        <div class="pill" title="Date">
+          <!-- calendar icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2Zm13 8H6v9h14v-9Z"/></svg>
+          September 2025
+        </div>
+        <div class="pill" title="Camera / Notes">
+          <!-- camera icon -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 4l2-2h2l2 2h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h4Zm3 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/></svg>
+          Shot on Anything • f/— • 1/— • ISO —
+        </div>
+      </aside>
+    </section>
+
+    <!-- Gallery -->
+    <section class="card gallery">
+      <div class="grid" id="gallery">
+        <!-- Replace src values with your own images. Duplicate .item blocks as needed. -->
+        <figure class="item">
+          <img src="images/lizzie.png" alt="Sample 1" loading="lazy">
+          <figcaption class="caption">This here is the Lizzie Borden house</figcaption>
+          <button aria-label="Open image" data-full="images/lizzie.png" data-cap="In Fall River, Massachusetts, there stands a house where the walls have soaked in screams and the shadows still remember the blood. This is the home of Lizzie Borden, the woman forever linked to one of the most brutal crimes in American history.
+
+The Murders of 1892"></button>
+        </figure>
+        <figure class="item">
+          <img src="images/annabelle.png" alt="Annabelle" loading="lazy">
+          <figcaption class="caption">Annabelle Doll</figcaption>
+          <button aria-label="Open image" data-full="images/annabelle.png" data-cap="Innocence is a mask, and Annabelle wears it well. With her stitched smile and button eyes, she appears as nothing more than a harmless Raggedy Ann doll. But behind the seams lurks a darkness that does not belong to this world.
+
+Her story begins in the 1970s"></button>
+        </figure>
+        <figure class="item">
+          <img src="images/conjuring.png" alt="Conjuring House" loading="lazy">
+          <figcaption class="caption">The Conjuring House</figcaption>
+          <button aria-label="Open image" data-full="images/conjuring.png" data-cap="Deep in the quiet woods of Harrisville, Rhode Island, stands a farmhouse older than America itself. Built in 1736, its walls whisper secrets of centuries past, but not all the voices are of the living.
+"></button>
+        </figure>
+        <figure class="item">
+          <img src="images/sevengables.png" alt="The House Of Seven Gables" loading="lazy">
+          <figcaption class="caption">The House Of Seven Gables</figcaption>
+          <button aria-label="Open image" data-full="images/sevengables.png" data-cap="The House of the Seven Gables, also known as the Turner-Ingersoll Mansion, is a historic colonial mansion located in Salem, Massachusetts. Built in 1668 for sea captain John Turner, it is one of the oldest surviving timber-framed mansions in New England."></button>
+        </figure>
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> Made by: Pimentel Programming!</footer>
+  </div>
+
+  <!-- Lightbox dialog -->
+  <dialog id="viewer" aria-label="Image viewer">
+    <div class="lightbox">
+      <button class="close" id="closeBtn">Close ✕</button>
+      <img id="viewImg" alt="Expanded image" src="" />
+      <div class="lightcap" id="viewCap"></div>
+    </div>
+  </dialog>
+
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple lightbox using <dialog>
+    const dlg = document.getElementById('viewer');
+    const viewImg = document.getElementById('viewImg');
+    const viewCap = document.getElementById('viewCap');
+
+    document.getElementById('gallery').addEventListener('click', (e)=>{
+      const btn = e.target.closest('button');
+      if(!btn) return;
+      viewImg.src = btn.dataset.full || '';
+      viewCap.textContent = btn.dataset.cap || '';
+      if(typeof dlg.showModal === 'function') dlg.showModal();
+      else dlg.setAttribute('open','');
+    });
+
+    document.getElementById('closeBtn').addEventListener('click', ()=>{
+      if(typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open');
+      viewImg.src = '';
+    });
+
+    // Close when clicking outside image
+    dlg.addEventListener('click', (e)=>{
+      const rect = viewImg.getBoundingClientRect();
+      const clickedInside = (
+        e.clientX >= rect.left && e.clientX <= rect.right &&
+        e.clientY >= rect.top && e.clientY <= rect.bottom
+      );
+      if(!clickedInside) {
+        if(typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open');
+        viewImg.src = '';
+      }
+    });
+  </script>
+
+  <!--
+  HOW TO USE
+  1) Save this file as photo-gallery.html and open it in your browser.
+  2) Replace the placeholder text (title, subtitle, description, pills) with your own.
+  3) Swap the sample image URLs with your photos. Duplicate a <figure class="item"> block for more images.
+  4) Optional: host on GitHub Pages by pushing this file to a repo and enabling Pages.
+  -->
+</body>
+</html>
