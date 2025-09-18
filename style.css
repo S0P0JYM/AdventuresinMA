@@ -2,8 +2,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom, #e6f2f2, #f9f7f7);
-  color: #0509ED;
+  background: linear-gradient(to bottom, #000000, #f50505);
+  color: #0d3;
   margin: 0;
   padding: 0;
 }
@@ -20,13 +20,13 @@ header {
 }
 
 nav {
-  background: #0509ED;
+  background: #0D0302;
   padding: 12px;
   text-align: center;
 }
 
 nav a {
-  color: #0509ED;
+  color: #ED1105;
   text-decoration: none;
   margin: 0 15px;
   font-weight: 500;
@@ -45,7 +45,7 @@ main {
 }
 
 h2 {
-  color: #0509ED;
+  color: #0d3;
   border-bottom: 2px solid #0D0302;
   padding-bottom: 5px;
 }
@@ -92,8 +92,8 @@ input[type="submit"]:hover {
 
 footer {
   text-align: center;
-  background: #0D0302;
+  background: #ED1105;
   padding: 15px;
   margin-top: 30px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
